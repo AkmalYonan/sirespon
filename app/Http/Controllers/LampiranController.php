@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Laporan;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LaporanController extends Controller
+class LampiranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.lap.index');
+        //
     }
 
     /**
@@ -20,7 +20,7 @@ class LaporanController extends Controller
      */
     public function create()
     {
-        return view('pages.lap.index');
+        //
     }
 
     /**
@@ -28,24 +28,7 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
-        // $request->validate([
-        //     'id_klasifikasi' => 'required',
-        //     'id_klasifikasi' => 'required',
-        //     'id_instansi' => 'required',
-        //     'id_tujuan_laporan' => 'required',
-        //     'judul' => 'required',
-        //     'desc' => 'required',
-        //     'date' => 'required',
-        //     'lokasi' => 'required',
-        //     'id_lampiran' => 'required',
-        //     'status' => 'required',
-        //     'status_pengirim' => 'required',
-        // ]);
-
-        // Laporan::create($request->all());
-        // return redirect()->route('laporan.index')->with('success', 'Data Laporan Berhasil dimasukkan');
+        //
     }
 
     /**

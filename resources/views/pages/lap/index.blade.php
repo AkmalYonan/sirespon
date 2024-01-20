@@ -119,20 +119,20 @@
                             Laporan anda</h5>
                         {{-- <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
                             technology acquisitions of 2021 so far, in reverse chronological order.</p> --}}
-                        <form class="">
+                        <form class="" action="{{ route('laporan.store') }}" method="POST">
+                            @csrf
                             <div class="">
                                 <div class="klasifikasi mb-5">
                                     <p class="mb-1">Pilih Klasifikasi Anda</p>
                                     <div class="grid max-w-2xl grid-cols-2 gap-2 rounded outline outline-blue-400">
                                         <div>
-                                            <input type="radio" name="option" id="pengaduan" value="pengaduan"
+                                            <input type="radio" name="id_klasifikasi" id="pengaduan" value="pengaduan"
                                                 class="peer hidden" checked />
                                             <label for="pengaduan"
                                                 class="block cursor-pointer select-none rounded p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Pengaduan</label>
                                         </div>
-
                                         <div>
-                                            <input type="radio" name="option" id="laporan" value="laporan"
+                                            <input type="radio" name="id_klasifikasi" id="laporan" value="laporan"
                                                 class="peer hidden" />
                                             <label for="laporan"
                                                 class="block cursor-pointer select-none rounded p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Laporan</label>
@@ -142,7 +142,7 @@
                                 <div class="max-w-2xl mx-auto">
                                     <div class="relative z-0 w-full mb-5 group">
                                         <input type="text" name="judul" id="judul"
-                                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " required />
                                         <label for="judul"
                                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -191,18 +191,23 @@
                                         </select>
                                     </div>
                                     <div class="flex justify-between">
-                                        <div class="mr-2">
+                                        <div class="mr-2 border">
                                             <input
-                                                class="block max-w-sm border text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none "
-                                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                                class="block max-w-sm border text-sm border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
+                                                aria-describedby="lampiran" id="lampiran" type="file">
                                         </div>
-                                        <div>
-                                            <div class="flex items-center mb-4">
-                                                <input id="checkbox-3" type="checkbox" value=""
+                                        <div class="flex items-center gap-3">
+                                            <div>
+                                                <input id="status_pengirim" type="checkbox" name="status_pengirim"
+                                                    value="anonim"
                                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-3"
-                                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I
-                                                    am 18 years or older</label>
+                                                <label for="status_pengirim"
+                                                    class="ms-2 text-base font-medium">Anonim</label>
+                                            </div>
+                                            <div>
+                                                <input id="status" type="checkbox" name="status" value="publik"
+                                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="status" class="ms-2 text-base font-medium">Publik</label>
                                             </div>
                                             <button type="submit"
                                                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
@@ -213,7 +218,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </main>
     </div>

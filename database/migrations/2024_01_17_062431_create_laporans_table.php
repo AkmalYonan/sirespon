@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
-            $table->string('id_klasifikasi');
+            $table->enum('klasifikasi', ['pengaduan', 'laporan']);
             $table->string('id_kategori');
             $table->string('id_instansi');
             $table->string('id_tujuan_laporan');
