@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/admin/laporan', [AdminController::class, 'index_laporan'])->name('admin.laporan.index');
+    Route::get('/admin/laporan/detail', [AdminController::class, 'laporan_detail'])->name('admin.laporan.detail');
+    Route::get('/admin/laporan/changeStatus', [AdminController::class, 'laporan_status'])->name('admin.laporan.status');
+    Route::get('/admin/pengaduan', [AdminController::class, 'index_pengaduan'])->name('admin.pengaduan.index');
+    Route::get('/admin/pengaduan/changeStatus', [AdminController::class, 'pengaduan_status'])->name('admin.pengaduan.status');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

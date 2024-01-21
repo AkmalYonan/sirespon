@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('instansis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('pemimpin');
             $table->enum('kategori', ['kelas', 'staff', 'guru']);
             $table->timestamps();
         });

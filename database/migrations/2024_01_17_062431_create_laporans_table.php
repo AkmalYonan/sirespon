@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('id_lampiran');
             $table->enum('status', ['rahasia', 'publik'])->default('publik');
             $table->enum('status_pengirim', ['anonim', 'publik'])->default('publik');
+            $table->enum('status_laporan', ['belum', 'selesai'])->default('belum');
             $table->timestamps();
         });
     }
