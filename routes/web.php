@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InstansiController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,10 +31,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/laporan/detail', [AdminController::class, 'laporan_detail'])->name('admin.laporan.detail');
     Route::get('/admin/laporan/changeStatus', [AdminController::class, 'laporan_status'])->name('admin.laporan.status');
     Route::get('/admin/pengaduan', [AdminController::class, 'index_pengaduan'])->name('admin.pengaduan.index');
+    Route::get('/admin/pengaduan/detail', [AdminController::class, 'pengaduan_detail'])->name('admin.pengaduan.detail');
     Route::get('/admin/pengaduan/changeStatus', [AdminController::class, 'pengaduan_status'])->name('admin.pengaduan.status');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('admin/instansi', InstansiController::class)->names('admin.instansi');
+    Route::resource('admin/kategori', KategoriController::class)->names('admin.kategori');
 });
 
 Route::resource('laporan', LaporanController::class);

@@ -19,4 +19,8 @@ class AdminController extends Controller
     {
         return view('pages.admin.pengaduan.index');
     }
+    public function pengaduan_detail()
+    {
+        return view('pages.admin.pengaduan.detail');
+    }
 }

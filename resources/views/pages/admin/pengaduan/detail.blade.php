@@ -7,7 +7,7 @@
     <div class="flex flex-col min-h-full bg-gray-200 dark:bg-gray-800 p-8 rounded-lg mb-4">
         <div class="flex justify-between items-center border-b pb-3 mb-3 border-b-gray-400">
             <div class="mr-2">
-                <p class="font-black text-white text-xl ">Detail Laporan</p>
+                <p class="font-black text-white text-xl ">Detail Pengaduan</p>
             </div>
             <div class="flex gap-3">
                 <p class="bg-zinc-900 text-zinc-200 p-2 rounded-lg text-sm ">Anonim</p>

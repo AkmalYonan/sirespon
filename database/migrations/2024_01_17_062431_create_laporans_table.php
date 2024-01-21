@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->id();
+            $table->string('id_lacak');
+            $table->string('email_pembuat');
             $table->enum('klasifikasi', ['pengaduan', 'laporan']);
             $table->string('id_kategori');
             $table->string('id_instansi');
@@ -21,7 +23,7 @@ return new class extends Migration
             $table->string('desc');
             $table->date('date');
             $table->string('lokasi');
-            $table->integer('id_lampiran');
+            $table->integer('id_lampiran')->nullable();
             $table->enum('status', ['rahasia', 'publik'])->default('publik');
             $table->enum('status_pengirim', ['anonim', 'publik'])->default('publik');
             $table->enum('status_laporan', ['belum', 'selesai'])->default('belum');
