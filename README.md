@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/bakaroti/resource/refs/heads/main/logo_110.png" />
 </p>
 
-# 🚀 SiRespon - Digital Invitation Management System
+# 🚀 SiRespon - Digital Reporting Issue
 
 Layanan laporan cepat diperuntukan untuk sebuah Instansi tertentu yang memiliki website / pengelola ini, dengan berbagai fitur seperti anonim,tracking,image
 
